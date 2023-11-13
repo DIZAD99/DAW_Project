@@ -39,6 +39,128 @@ const UtilisateurSchema = new Schema({
     }
 )
 
-const Utilisateur = mongoose.model('Utilisateur', UtilisateurSchema)
 
-module.exports = Utilisateur
+const patientSchema = new mongoose.Schema({
+    ID_Utilisateur: { type: mongoose.Schema.Types.ObjectId, ref: 'Utilisateur' },
+    niveauAddiction: {
+      type: String,
+      required: true,
+    },
+    moyenneHeuresJeuParSemaine: {
+      type: Number,
+      required: true,
+    },
+    moyenneMoisJeu: {
+      type: Number,
+      required: true,
+    },
+    scoreInsomnie: {
+      type: Number,
+      required: true,
+    },
+      
+    scoreSomnolenceExcessive: {
+      type: Number,
+      required: true,
+    },
+    scoreAnxiete: {
+      type: Number,
+      required: true,
+    },
+    scoreDepression: {
+      type: Number,
+      required: true,
+    }
+   
+  });
+  
+  
+  
+  
+  const medecinSchema = new mongoose.Schema({
+    specialite: {
+      type: String,
+      required: true,
+    },
+    sessionsTherapiePlanifiees: {
+      type: Number,
+      required: true,
+    },
+    
+    ID_Utilisateur: { type: mongoose.Schema.Types.ObjectId, ref: 'Utilisateur' },
+  });
+  
+  
+  const adminSchema = new mongoose.Schema({
+    role: {
+      type: String,
+      required: true,
+    },
+    autorisations:{
+           type: [String],
+           default:[],
+    } ,
+   
+    ID_Utilisateur: { type: mongoose.Schema.Types.ObjectId, ref: 'Utilisateur' },
+  });
+  
+  
+  const questionnaireSchema = new mongoose.Schema({
+    dateQuestionnaire: Date,
+  
+    patient: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' },
+  });
+  
+  
+  const Utilisateur = mongoose.model('Utilisateur', utilisateurSchema);
+  const Patient = mongoose.model('Patient', patientSchema);
+  const Medecin = mongoose.model('Medecin', medecinSchema);
+  const Admin = mongoose.model('Admin', adminSchema);
+  const Questionnaire = mongoose.model('Questionnaire', questionnaireSchema);
+  
+  
+  const reponseAuQuestionnaireSchema = new mongoose.Schema({
+    Réponse_à_la_question: {
+      type: String,
+      required: true,
+    },
+    Score_attribué_à_la_réponse: {
+      type: Number,
+      required: true,
+    },
+    Commentaires_sur_la_réponse: {
+      type: String,
+      required: true,
+    },
+    Autres_informations_liées_à_la_réponse: {
+      type: String,
+      required: true,
+    },
+      
+      ID_Questionnaire: {
+        type: Schema.Types.ObjectId,
+        ref: 'Questionnaire', 
+        required: true
+      },
+      ID_Question: {
+        type: Schema.Types.ObjectId,
+        ref: 'Question', 
+        required: true
+      },
+    });
+    
+  
+  
+    const ReponseAuQuestionnaire = mongoose.model('ReponseAuQuestionnaire', reponseAuQuestionnaireSchema);
+   
+    
+      module.exports = {
+      Utilisateur,
+      Patient,
+      Medecin,
+      Admin,
+      Questionnaire,
+      ReponseAuQuestionnaire,
+     
+    };
+
