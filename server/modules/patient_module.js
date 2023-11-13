@@ -1,14 +1,16 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema
+// const Schema = mongoose.Schema
 
-const ggggSchema = new Schema({
+// const ggggSchema = new Schema({
 
-},
-    {
-        timestamps: true
-    })
+    
 
-const gggg = mongoose.model('gggg', ggggSchema)
+// },
+//     {
+//         timestamps: true
+//     })
 
-module.exports = gggg
+// const gggg = mongoose.model('gggg', ggggSchema)
+
+// module.exports = gggg
