@@ -106,17 +106,27 @@ const patientSchema = new mongoose.Schema({
   
   
   const questionnaireSchema = new mongoose.Schema({
-    dateQuestionnaire: Date,
-  
-    patient: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' },
+    ID_Questionnaire: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: mongoose.Types.ObjectId,
+    },
+    ID_Patient: { type: mongoose.Schema.Types.ObjectId, ref: 'Patient' },
+    dateDuQuestionnaire: {
+      type: Date,
+      required: true,
+    },
+   
   });
   
+  const Questionnaire = mongoose.model('Questionnaire', questionnaireSchema);
+  
+  module.exports = Questionnaire;
   
   const Utilisateur = mongoose.model('Utilisateur', utilisateurSchema);
   const Patient = mongoose.model('Patient', patientSchema);
   const Medecin = mongoose.model('Medecin', medecinSchema);
   const Admin = mongoose.model('Admin', adminSchema);
-  const Questionnaire = mongoose.model('Questionnaire', questionnaireSchema);
+  
   
   
   const reponseAuQuestionnaireSchema = new mongoose.Schema({
@@ -132,11 +142,7 @@ const patientSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    Autres_informations_liées_à_la_réponse: {
-      type: String,
-      required: true,
-    },
-      
+  
       ID_Questionnaire: {
         type: Schema.Types.ObjectId,
         ref: 'Questionnaire', 
