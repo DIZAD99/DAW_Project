@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const UtilisateurSchema = new Schema({
-
     nom: {
         type: String,
         required: true,
@@ -11,7 +10,7 @@ const UtilisateurSchema = new Schema({
     },
     prenom: {
         type: String,
-        unique: true,
+        // unique: true,
         required: true,
         trim: true,
     },
@@ -43,117 +42,90 @@ const UtilisateurSchema = new Schema({
     {
         timestamps: true
     })
-const Utilisateur = mongoose.model('Utilisateur', UtilisateurSchema)
+const Utilisateur = mongoose.model('utilisateur', UtilisateurSchema)
 
 
 const PatientSchema = Schema({
-    ID_Patient: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Utilisateur: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UtilisateurSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     niveau_Addiction: {
         type: String,
-        required: true,
     },
     moyenne_Heures_de_Jeu_par_Semaine: {
         type: Number,
-        required: true,
     },
     moyenne_de_Mois_de_Jeu: {
         type: Number,
-        required: true,
     },
     score_Insomnie: {
         type: Number,
-        required: true,
     },
     score_de_Somnolence_Excessive: {
         type: Number,
-        required: true,
     },
     score_Anxiete: {
         type: Number,
-        required: true,
     },
     score_de_Depression: {
         type: Number,
-        required: true,
     }
 },
     {
         timestamps: true
     })
-const Patient = mongoose.model('Patient', PatientSchema)
+const Patient = mongoose.model('patient', PatientSchema)
 
 
 const MedecinSchema = Schema({
-    ID_Medecin: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Utilisateur: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UtilisateurSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     specialite: {
         type: String,
-        required: true,
     },
     sessions_de_Therapie_Planifiees: {
         type: Number,
-        required: true,
     },
 },
     {
         timestamps: true
     })
-const Medecin = mongoose.model('Medecin', MedecinSchema)
+const Medecin = mongoose.model('medecin', MedecinSchema)
 
 
 const AdminSchema = Schema({
-    ID_Admin: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Utilisateur: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UtilisateurSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
-    role: {
+    admin_role: {
         type: String,
-        required: true,
     },
     autorisations: {
         type: String,
-        required: true
     }
 },
     {
         timestamps: true
     })
-const Admin = mongoose.model('Admin', AdminSchema)
+const Admin = mongoose.model('admin', AdminSchema)
 
 
 const QuestionnaireSchema = Schema({
-    ID_Questionnaire: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Patient: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'PatientSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     date_du_Questionnaire: {
         type: Date,
@@ -163,15 +135,10 @@ const QuestionnaireSchema = Schema({
     {
         timestamps: true
     })
-const Questionnaire = mongoose.model('Questionnaire', QuestionnaireSchema)
+const Questionnaire = mongoose.model('questionnaire', QuestionnaireSchema)
 
 
 const QuestionSchema = Schema({
-    ID_Question: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     texte_de_la_question: {
         type: String,
         required: true
@@ -200,24 +167,21 @@ const QuestionSchema = Schema({
     {
         timestamps: true
     })
-const Question = mongoose.model('Question', QuestionSchema)
+const Question = mongoose.model('question', QuestionSchema)
 
 
-const Réponse_QuestionnaireSchema = Schema({
-    ID_Reponse: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
+const Reponse_QuestionnaireSchema = Schema({
     ID_Questionnaire: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'QuestionnaireSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     ID_Question: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'QuestionSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'QuestionSchema',
+        // required: true,
+        type: Object
     },
     reponse_la_question: {
         type: String,
@@ -235,19 +199,15 @@ const Réponse_QuestionnaireSchema = Schema({
     {
         timestamps: true
     })
-const Réponse_Questionnaire = mongoose.model('Réponse_Questionnaire', Réponse_QuestionnaireSchema)
+const Reponse_Questionnaire = mongoose.model('reponse_Questionnaire', Reponse_QuestionnaireSchema)
 
 
 const AlertesSchema = Schema({
-    ID_Alertes: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Patient: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'PatientSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Patient',
+        // required: true,
+        type: Object
     },
     date_du_Alertes: {
         type: Date,
@@ -261,24 +221,21 @@ const AlertesSchema = Schema({
     {
         timestamps: true
     })
-const Alertes = mongoose.model('Alertes', AlertesSchema)
+const Alertes = mongoose.model('alertes', AlertesSchema)
 
 
 const MessagesSchema = Schema({
-    ID_Messages: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Expediteur: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UtilisateurSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     ID_Destinataire: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UtilisateurSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     contenu_du_Message: {
         type: String,
@@ -292,19 +249,15 @@ const MessagesSchema = Schema({
     {
         timestamps: true
     })
-const Messages = mongoose.model('Messages', MessagesSchema)
+const Messages = mongoose.model('messages', MessagesSchema)
 
 
 const Statistiques_UtilisationSchema = Schema({
-    ID_Statistique: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-    },
     ID_Utilisateur: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'UtilisateurSchema',
-        required: true,
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Utilisateur',
+        // required: true,
+        type: Object
     },
     date_de_la_Statistique: {
         type: Date,
@@ -323,7 +276,7 @@ const Statistiques_UtilisationSchema = Schema({
     {
         timestamps: true
     })
-const Statistiques_Utilisation = mongoose.model('Statistiques_Utilisation', Statistiques_UtilisationSchema)
+const Statistiques_Utilisation = mongoose.model('statistiques_Utilisation', Statistiques_UtilisationSchema)
 
 module.exports = {
     Utilisateur,
@@ -332,7 +285,7 @@ module.exports = {
     Admin,
     Questionnaire,
     Question,
-    Réponse_Questionnaire,
+    Reponse_Questionnaire,
     Alertes,
     Messages,
     Statistiques_Utilisation
