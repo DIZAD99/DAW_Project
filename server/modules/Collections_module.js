@@ -10,7 +10,6 @@ const UtilisateurSchema = new Schema({
     },
     prenom: {
         type: String,
-        // unique: true,
         required: true,
         trim: true,
     },
@@ -47,9 +46,6 @@ const Utilisateur = mongoose.model('utilisateur', UtilisateurSchema)
 
 const PatientSchema = Schema({
     ID_Utilisateur: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     niveau_Addiction: {
@@ -82,9 +78,6 @@ const Patient = mongoose.model('patient', PatientSchema)
 
 const MedecinSchema = Schema({
     ID_Utilisateur: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     specialite: {
@@ -102,9 +95,6 @@ const Medecin = mongoose.model('medecin', MedecinSchema)
 
 const AdminSchema = Schema({
     ID_Utilisateur: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     admin_role: {
@@ -122,14 +112,11 @@ const Admin = mongoose.model('admin', AdminSchema)
 
 const QuestionnaireSchema = Schema({
     ID_Patient: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     date_du_Questionnaire: {
         type: Date,
-        required: true
+
     }
 },
     {
@@ -141,27 +128,26 @@ const Questionnaire = mongoose.model('questionnaire', QuestionnaireSchema)
 const QuestionSchema = Schema({
     texte_de_la_question: {
         type: String,
-        required: true
+
     },
     type_de_question: {
         type: Number,
-        required: true
+
     },
     options_de_Reponse: {
         type: String,
-        required: true
+
     },
     points_attribues_la_question: {
         type: String,
-        required: true
+
     },
     ordre_affichage_dans_le_questionnaire: {
         type: Number,
-        required: true
+
     },
     eventuelles_dependances_de_question: {
         type: String,
-        required: true
     }
 },
     {
@@ -172,28 +158,19 @@ const Question = mongoose.model('question', QuestionSchema)
 
 const Reponse_QuestionnaireSchema = Schema({
     ID_Questionnaire: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     ID_Question: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'QuestionSchema',
-        // required: true,
         type: Object
     },
     reponse_la_question: {
         type: String,
-        required: true
     },
     score_attribue_la_reponse: {
         type: Number,
-        required: true
     },
     commentaires_sur_la_reponse: {
         type: String,
-        required: true
     }
 },
     {
@@ -204,18 +181,13 @@ const Reponse_Questionnaire = mongoose.model('reponse_Questionnaire', Reponse_Qu
 
 const AlertesSchema = Schema({
     ID_Patient: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Patient',
-        // required: true,
         type: Object
     },
     date_du_Alertes: {
         type: Date,
-        required: true
     },
     type_du_Alertes: {
         type: String,
-        required: true
     }
 },
     {
@@ -226,24 +198,16 @@ const Alertes = mongoose.model('alertes', AlertesSchema)
 
 const MessagesSchema = Schema({
     ID_Expediteur: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     ID_Destinataire: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     contenu_du_Message: {
         type: String,
-        required: true
     },
     date_de_Envoi: {
         type: Date,
-        required: true
     }
 },
     {
@@ -254,14 +218,11 @@ const Messages = mongoose.model('messages', MessagesSchema)
 
 const Statistiques_UtilisationSchema = Schema({
     ID_Utilisateur: {
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Utilisateur',
-        // required: true,
         type: Object
     },
     date_de_la_Statistique: {
         type: Date,
-        required: true
+
     },
     statistiques_specifiques_utilisation_de_application: {
         nombre_de_connexions: {
@@ -270,7 +231,6 @@ const Statistiques_UtilisationSchema = Schema({
         temps_passe_sur_application: {
             type: Number
         }
-
     }
 },
     {
