@@ -3,12 +3,14 @@
 :root {
     --black: #000;
     --white: #fff;
-    --gray: #DEDEDE;
+    /* --gray: #bdbdbd; */
+    --gray: #a8a8a8;
     --orange: #FF8E00;
     --blue1: #0038FF;
     --blue2: #7694FF;
     --blue3: rgba(118, 148, 255, 0.26);
-    --p: rgba(0, 29, 35, 0.7412);
+    --footerBg: rgba(25, 9, 51, 0.94);
+     --p: rgba(0, 29, 35, 0.7412);
     --mainfont: 'Lexend', sans-serif;
     --secondfont: 'Oregano', cursive;
 }

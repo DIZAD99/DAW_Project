@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Routing, Routes, Route } from 'react-router-dom'
-import Footer from './components/footer/Footer'
+
 
 
 function MyRoutes() {
@@ -8,7 +8,7 @@ function MyRoutes() {
     <>
       <Routing>
         <Routes>
-          <Route path='/' Component={Footer} />
+          {/* <Route path='/' Component={} /> */}
         </Routes>
       </Routing> 
     </>
