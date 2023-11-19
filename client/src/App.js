@@ -1,9 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
+import MyRoutes from './MyRoutes'
+import './App.css'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>App</div>
-    )
-  }
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 2000,
+    },
+  },
+})
+
+function App() {
+  return (
+    <>
+
+      <ThemeProvider theme={theme}>
+        <MyRoutes />
+      </ThemeProvider>
+    </>
+  )
 }
+
+export default App
