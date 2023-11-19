@@ -1,8 +1,14 @@
 import React from 'react'
 import './Testimonial.css'
+import Header from '../../components/header/Header'
+import Footer from '../../components/footer/Footer'
 function Testimonial() {
     return (
-        <div>Testimonial</div>
+        <>
+            <Header></Header>
+
+            <Footer></Footer>
+        </>
     )
 }
 
