@@ -5,7 +5,7 @@ import Footer from '../../components/footer/Footer'
 function Service() {
     return (
         <>
-            <Header></Header>
+            <Header title={'Services'}  subtitle={'khalfi aymen'}></Header>
 
             <Footer></Footer>
         </>

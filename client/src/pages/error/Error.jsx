@@ -5,7 +5,7 @@ import Footer from '../../components/footer/Footer'
 function Error() {
     return (
         <>
-            <Header></Header>
+            <Header title={'Error Us'}  subtitle={'khalfi aymen'}></Header>
 
             <Footer></Footer>
         </>

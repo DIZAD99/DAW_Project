@@ -6,7 +6,7 @@ import Footer from '../../components/footer/Footer'
 function About() {
   return (
     <>
-      <Header></Header>
+      <Header title={'About Us'}  subtitle={'khalfi aymen'}></Header>
       
       <Footer></Footer>
     </>

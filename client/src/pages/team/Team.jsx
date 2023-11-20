@@ -5,7 +5,7 @@ import Footer from '../../components/footer/Footer'
 function Team() {
     return (
         <>
-            <Header></Header>
+            <Header title={'Team'}  subtitle={'khalfi aymen'}></Header>
 
             <Footer></Footer>
         </>

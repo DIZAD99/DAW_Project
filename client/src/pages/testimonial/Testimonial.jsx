@@ -5,7 +5,7 @@ import Footer from '../../components/footer/Footer'
 function Testimonial() {
     return (
         <>
-            <Header></Header>
+            <Header title={'Testimonail'}  subtitle={'khalfi aymen'}></Header>
 
             <Footer></Footer>
         </>
