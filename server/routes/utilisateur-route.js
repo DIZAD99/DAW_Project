@@ -148,6 +148,7 @@ router.get('/patient', (req, res) => {
 })
 
 
+
 router.get('/medecin', (req, res) => {
     Medecin.find()
         .then(medecinRes => {
@@ -184,6 +185,61 @@ router.get('/medecin', (req, res) => {
                 .catch(err => res.status(400).json(`Error in utilisateur-route.js : ${err}`))
         })
         .catch(err => res.status(400).json(`Error in utilisateur-route.js : ${err}`))
+})
+
+
+
+router.delete('/delete', async (req, res) => {
+    const emailValue = req.body.email
+
+    try {
+        const utilisateur = await Utilisateur.findOne({ email: emailValue })
+
+        if (!utilisateur) {
+            res.status(404).json({ message: 'User not found with this email.' })
+            return
+        }
+
+        switch (utilisateur.role) {
+            case 'patient':
+                await Patient.deleteOne({ ID_Utilisateur: utilisateur._id });
+                console.log('Patient was deleted succeessfully.')
+                break
+            case 'medecin':
+                await Medecin.deleteOne({ ID_Utilisateur: utilisateur._id })
+                console.log('Medecin was deleted succeessfully.')
+                break
+            case 'admin':
+                await Admin.deleteOne({ ID_Utilisateur: utilisateur._id })
+                console.log('Admin was deleted succeessfully.')
+                break
+            default:
+                console.log('User not found with this email.')
+        }
+
+        await Utilisateur.deleteOne({ email: emailValue })
+        res.status(200).json({ message: 'Utilisateur was deleted succeessfully' })
+    } catch (error) {
+        res.status(500).json({ message: 'Error in User delete' })
+    }
+})
+
+router.put('/update', (req, res) => {
+    const Fnom = req.body.nom
+    const Fprenom = req.body.prenom 
+    const Fgenre = req.body.genre
+    const Fdate_de_Naissance = req.body.date_de_Naissance
+    const Femail = req.body.email
+    const Fmot_de_Passe = req.body.mot_de_Passe
+
+
+    YourModel.findOneAndUpdate({ email: Femail }, { $set: { nom: Fnom } }, { new: true })
+        .then(updatedDocument => {
+            res.json(updatedDocument)
+        })
+        .catch(error => {
+            res.status(500).json({ error: 'Internal Server Error' })
+        })
 })
 
 
