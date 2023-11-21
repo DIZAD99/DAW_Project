@@ -7,8 +7,10 @@ function About() {
   return (
     <>
       <Header title={'About Us'}  subtitle={'khalfi aymen'}></Header>
-      
-      <Footer></Footer>
+        <div className="section">
+          
+        </div>
+      <Footer/>
     </>
   )
 }
