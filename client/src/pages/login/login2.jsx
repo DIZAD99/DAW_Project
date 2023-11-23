@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import backgroundImg from '../../assets/background.png'
-import welcomeImg from '../../assets/welcome.jpg'
-import './Login.css'
+import React,{ useState } from 'react'
+import backgroungImg from '../assets/background.png'
+import welcomeImg from '../assets/welcome.jpg'
 
-function Login() {
+function login2() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
@@ -13,7 +12,7 @@ function Login() {
 return (
   <div className="relative w-full h-screen overflow-hidden">
     {/* Background Image */}
-    <img src={backgroundImg} alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+    <img src={backgroungImg} alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
 
     {/* Content Container */}
     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded">
@@ -127,4 +126,4 @@ return (
 );
 }
 
-export default Login
+export default login2
