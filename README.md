@@ -26,12 +26,12 @@ Development of a Web Platform for the Prediction and Management of Video Game Ad
    `Front End Dependencies :`
    ```bash
    cd client
-   npm install
+   npm install --force
    ```
    `Back End Dependencies :`
    ```bash
    cd server
-   npm install
+   npm install --force
    ```
 6. **Server start:**
 
