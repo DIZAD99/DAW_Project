@@ -18,7 +18,7 @@ function About() {
       <div className="section about">
         <div className='part1'>
           <div className="part_header">
-            <Title title={'About'} subtitle={'What do you know about us ..?'} />
+            <Title title={'About'} subtitle={'What do you know about us ...?'} />
           </div>
           <div className="part_footer flexCenter">
             <div className="part_footer_left">
