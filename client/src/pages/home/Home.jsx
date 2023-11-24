@@ -1,11 +1,13 @@
 import React from 'react'
 import './Home.css'
-import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import Homeheader from './homeHeader'
+
+
 function Home() {
     return (
         <>
-            <Header></Header>
+            <Homeheader />
 
             <Footer></Footer>
         </>

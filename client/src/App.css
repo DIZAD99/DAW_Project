@@ -11,7 +11,7 @@
     --blue2: #7694FF;
     --blue3: rgba(118, 148, 255, 0.26);
     --footerBg: rgba(25, 9, 51, 0.94);
-     --p: rgba(0, 29, 35, 0.7412);
+    --p: rgba(0, 29, 35, 0.7412);
     --mainfont: 'Lexend', sans-serif;
     --secondfont: 'Oregano', cursive;
 }
@@ -59,8 +59,11 @@ a {
 
 .p {
     color: var(--p);
-    line-height: 1.4rem;
-    font-size: 16px;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56.488px;
+    letter-spacing: 1.87px;
     font-family: var(--mainfont);
 }
 

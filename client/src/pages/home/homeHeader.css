@@ -1,0 +1,13 @@
+.Homeheader {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/homeBG.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Homeheader .contnet{
+    padding: 2rem;
+    margin-top: 6rem;
+}
