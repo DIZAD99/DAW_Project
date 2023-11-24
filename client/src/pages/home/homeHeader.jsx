@@ -10,8 +10,15 @@ function Homeheader() {
             <div className="contnet">
                 <div className="left">
                     <h1>
-                        WELCOME TO OUR PROGRAME
+                        WELCOME TO OUR <br /> PROGRAME
                     </h1>
+                    <p>
+                        if you feel like gaming is taking your time , take our test , take our test you are an sdnsjad
+                    </p>
+                    <p>
+                        if you feel like gaming is taking your time if you feel like gaming is taking your time namdp1wwdas
+                    </p>
+                    <button className='Btn'>Take Test</button>
                 </div>
                 <div className="right">
                     <img src={landingPage} alt="img" />

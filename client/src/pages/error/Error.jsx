@@ -7,15 +7,21 @@ function Error() {
     return (
         <>
             <Header title={'Error Us'} subtitle={'khalfi aymen'}></Header>
-            <div className="section error">
-                <Dangerous />
-                <h1>404</h1>
-                <h1>Page Not Found</h1>
-                <p className='p'>We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
-                <button className="Btn">Go Back To Home page</button>
-            </div>
+            <ErrorSection/>
             <Footer></Footer>
         </>
+    )
+}
+
+export function ErrorSection() {
+    return (
+        <div className="section error">
+            <Dangerous />
+            <h1>404</h1>
+            <h1>Page Not Found</h1>
+            <p className='p'>We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p>
+            <button className="Btn">Go Back To Home page</button>
+        </div>
     )
 }
 

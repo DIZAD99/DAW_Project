@@ -10,45 +10,51 @@ function Service() {
     return (
         <>
             <Header title={'Services'} subtitle={'khalfi aymen'}></Header>
-            <div className="section service">
-                <Title title={'Our Services'} subtitle={'Learn More What We Do And Get Involved'} />
-                <div className="allcards">
-                    <div className="cards">
-                        {
-                            card1.map(item => {
-                                return (
-                                    <div className='card'>
-                                        <item.icon />
-                                        <h1>{item.title}</h1>
-                                        <p className="p">
-                                            {item.body}
-                                        </p>
-                                        <button className='Btn'>Read More</button>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="cards">
-                        {
-                            card2.map(item => {
-                                return (
-                                    <div className='card'>
-                                        <item.icon />
-                                        <h1>{item.title}</h1>
-                                        <p className="p">
-                                            {item.body}
-                                        </p>
-                                        <button className='Btn'>Read More</button>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-            </div>
+                <ServiceSection/>
             <Footer></Footer>
         </>
+    )
+}
+
+export function ServiceSection() {
+    return (
+        <div className="section service">
+            <Title title={'Our Services'} subtitle={'Learn More What We Do And Get Involved'} />
+            <div className="allcards">
+                <div className="cards">
+                    {
+                        card1.map(item => {
+                            return (
+                                <div className='card'>
+                                    <item.icon />
+                                    <h1>{item.title}</h1>
+                                    <p className="p">
+                                        {item.body}
+                                    </p>
+                                    <button className='Btn'>Read More</button>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                <div className="cards">
+                    {
+                        card2.map(item => {
+                            return (
+                                <div className='card'>
+                                    <item.icon />
+                                    <h1>{item.title}</h1>
+                                    <p className="p">
+                                        {item.body}
+                                    </p>
+                                    <button className='Btn'>Read More</button>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </div>
     )
 }
 

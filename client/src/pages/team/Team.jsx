@@ -9,39 +9,44 @@ function Team() {
     return (
         <>
             <Header title={'Team'} subtitle={'khalfi aymen'}></Header>
-            <div className="section team">
-                <Title title={'Team Members'} subtitle={`Let's Meet With Our Ordinary Soldiers`} />
-                <div className="content">
-                    {
-                        team.map(item => {
-                            return (
-                                <div className="member">
-                                    <img src={item.img} alt="img" />
-                                    <div>
-                                        <h1>{item.name}</h1>
-                                        <span>{item.job}</span>
-                                        <div className="icons">
-                                            <a href={item.instagram}>
-                                                <Instagram />
-                                            </a>
-                                            <a href={item.github}>
-                                                <GitHub />
-                                            </a>
-                                            <a href={item.linkedIn}>
-                                                <LinkedIn />
-                                            </a>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
+            <TeamSection />
             <Footer></Footer>
         </>
+    )
+}
+export function TeamSection() {
+    return (
+        <div className="section team">
+            <Title title={'Team Members'} subtitle={`Let's Meet With Our Ordinary Soldiers`} />
+            <div className="content">
+                {
+                    team.map(item => {
+                        return (
+                            <div className="member">
+                                <img src={item.img} alt="img" />
+                                <div>
+                                    <h1>{item.name}</h1>
+                                    <span>{item.job}</span>
+                                    <div className="icons">
+                                        <a href={item.instagram}>
+                                            <Instagram />
+                                        </a>
+                                        <a href={item.github}>
+                                            <GitHub />
+                                        </a>
+                                        <a href={item.linkedIn}>
+                                            <LinkedIn />
+                                        </a>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
     )
 }
 

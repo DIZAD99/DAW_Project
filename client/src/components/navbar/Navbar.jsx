@@ -41,8 +41,8 @@ function Navbar() {
                     <Collapse in={isDrawerOpen}>
                         <div className="nav">
                             <ul className='flexColCenter minul'>
-                                <li> <Link to='' >Home</Link> </li>
-                                <li> <Link to='' >About Us</Link> </li>
+                                <li> <Link to='/' >Home</Link> </li>
+                                <li> <Link to='/about' >About Us</Link> </li>
                                 <li>
                                     <Link to='' id="basic-button"
                                         aria-controls={open ? 'basic-menu' : undefined}
@@ -67,22 +67,22 @@ function Navbar() {
                                         }}
                                     >
                                         <MenuItem onClick={handleClose}>
-                                            <Link to=''>Service</Link>
+                                            <Link to='/Service'>Service</Link>
                                         </MenuItem>
                                         <MenuItem onClick={handleClose}>
-                                            <Link to=''>Our Team</Link>
+                                            <Link to='/team'>Our Team</Link>
                                         </MenuItem>
                                         <MenuItem onClick={handleClose}>
-                                            <Link to=''>Testimonial</Link>
+                                            <Link to='/Testimonial'>Testimonial</Link>
                                         </MenuItem>
                                         <MenuItem onClick={handleClose}>
-                                            <Link to=''>Error page</Link>
+                                            <Link to='/Error'>Error page</Link>
                                         </MenuItem>
                                     </Menu>
                                 </li>
-                                <li> <Link to='' >Contact Us</Link> </li>
-                                <li> <Link to='' className="Btn" >LogIn</Link> </li>
-                                <li> <Link to='' className="Btn" >SignUp</Link> </li>
+                                <li> <Link to='/Contact' >Contact Us</Link> </li>
+                                <li> <Link to='/LogIn' className="Btn" >LogIn</Link> </li>
+                                <li> <Link to='/SignUp' className="Btn" >SignUp</Link> </li>
                             </ul>
                         </div>
                     </Collapse>
@@ -95,8 +95,8 @@ function Navbar() {
                     </div>
                     <div className="nav">
                         <ul className='flexCenter'>
-                            <li> <Link to='' >Home</Link> </li>
-                            <li> <Link to='' >About Us</Link> </li>
+                            <li> <Link to='/' >Home</Link> </li>
+                            <li> <Link to='/About' >About Us</Link> </li>
                             <li>
                                 <Link to='' id="basic-button"
                                     aria-controls={open ? 'basic-menu' : undefined}
@@ -121,22 +121,22 @@ function Navbar() {
                                     }}
                                 >
                                     <MenuItem onClick={handleClose}>
-                                        <Link to=''>Service</Link>
+                                        <Link to='/Service'>Service</Link>
                                     </MenuItem>
                                     <MenuItem onClick={handleClose}>
-                                        <Link to=''>Our Team</Link>
+                                        <Link to='/Team'>Our Team</Link>
                                     </MenuItem>
                                     <MenuItem onClick={handleClose}>
-                                        <Link to=''>Testimonial</Link>
+                                        <Link to='/Testimonial'>Testimonial</Link>
                                     </MenuItem>
                                     <MenuItem onClick={handleClose}>
-                                        <Link to=''>Error page</Link>
+                                        <Link to='/Error'>Error page</Link>
                                     </MenuItem>
                                 </Menu>
                             </li>
-                            <li> <Link to='' >Contact Us</Link> </li>
-                            <li> <Link to='' className="Btn" >LogIn</Link> </li>
-                            <li> <Link to='' className="Btn" >SignUp</Link> </li>
+                            <li> <Link to='/Contact' >Contact Us</Link> </li>
+                            <li> <Link to='/LogIn' className="Btn" >LogIn</Link> </li>
+                            <li> <Link to='/SignUp' className="Btn" >SignUp</Link> </li>
                         </ul>
                     </div>
                 </div>
