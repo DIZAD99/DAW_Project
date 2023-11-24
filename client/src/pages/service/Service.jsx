@@ -28,6 +28,7 @@ export function ServiceSection() {
                                 <div className='card'>
                                     <item.icon />
                                     <h1>{item.title}</h1>
+                                    
                                     <p className="p">
                                         {item.body}
                                     </p>
