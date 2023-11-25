@@ -13,6 +13,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    min-width: 320px;
+}
+
+.team .content .member img{
+    width: 320px;
 }
 
 .team .content .member>div {
@@ -62,5 +67,5 @@
 }
 
 .team .content .member>div .icons svg:hover {
-   color: var(--blue1);
+    color: var(--blue1);
 }

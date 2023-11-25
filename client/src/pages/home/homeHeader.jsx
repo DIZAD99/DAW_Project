@@ -2,6 +2,7 @@ import React from 'react'
 import './homeHeader.css'
 import Navbar from '../../components/navbar/Navbar'
 import landingPage from '../../assets/landingPage.png'
+// import Typewriter from 'typewriter-effect'
 
 function Homeheader() {
     return (
@@ -10,7 +11,11 @@ function Homeheader() {
             <div className="contnet">
                 <div className="left">
                     <h1>
-                        WELCOME TO OUR <br /> PROGRAME
+                        {/* <Typewriter options={{
+                            strings: [`WELCOME TO OUR PROGRAM`]
+                            , autoStart: true, loop: true
+                        }} /> */}
+                        WELCOME TO OUR<br />PROGRAM
                     </h1>
                     <p>
                         if you feel like gaming is taking your time , take our test , take our test you are an sdnsjad

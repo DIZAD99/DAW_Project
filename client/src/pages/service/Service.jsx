@@ -23,9 +23,9 @@ export function ServiceSection() {
             <div className="allcards">
                 <div className="cards">
                     {
-                        card1.map(item => {
+                        card1.map((item,id) => {
                             return (
-                                <div className='card'>
+                                <div className='card' key={id}>
                                     <item.icon />
                                     <h1>{item.title}</h1>
                                     
@@ -40,9 +40,9 @@ export function ServiceSection() {
                 </div>
                 <div className="cards">
                     {
-                        card2.map(item => {
+                        card2.map((item,id) => {
                             return (
-                                <div className='card'>
+                                <div className='card' key={id}>
                                     <item.icon />
                                     <h1>{item.title}</h1>
                                     <p className="p">

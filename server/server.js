@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 
 let UtilisateurRouter = require('./routes/utilisateur-route')
+let LoginRouter = require('./routes/login-route')
+let SignupRouter = require('./routes/signup-route')
 
 dotenv.config()
 
@@ -22,6 +24,8 @@ connection.once('open', () => {
 })
 
 app.use('/utilisateur', UtilisateurRouter)
+app.use('/login', LoginRouter)
+app.use('/signup', SignupRouter)
 
 
 app.listen(PORT, () => {

@@ -53,9 +53,9 @@ export function TestimonailSection() {
                     className="mySwiper"
                 >
                     {
-                        cards.map(item => {
+                        cards.map((item,id) => {
                             return (
-                                <SwiperSlide>
+                                <SwiperSlide key={id}>
                                     <div className="card">
                                         <p className="p">
                                             {item.comment}

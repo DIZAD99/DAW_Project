@@ -20,9 +20,9 @@ export function TeamSection() {
             <Title title={'Team Members'} subtitle={`Let's Meet With Our Ordinary Soldiers`} />
             <div className="content">
                 {
-                    team.map(item => {
+                    team.map((item,id) => {
                         return (
-                            <div className="member">
+                            <div className="member" key={id}>
                                 <img src={item.img} alt="img" />
                                 <div>
                                     <h1>{item.name}</h1>

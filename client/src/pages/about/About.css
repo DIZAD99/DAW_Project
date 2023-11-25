@@ -6,6 +6,10 @@
     gap: 6rem;
 }
 
+.about .part1 .part_header {
+ margin-bottom: 3rem;
+}
+
 .about .part1 .part_footer div {
     flex: 1;
 }
@@ -91,6 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     gap: 6rem;
     margin-top: 3rem;

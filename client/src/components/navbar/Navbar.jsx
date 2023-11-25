@@ -4,7 +4,7 @@ import logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import { useMediaQuery } from '@material-ui/core'
+import useMediaQuery from '@mui/material/useMediaQuery';
 import MenuIcon from '@mui/icons-material/Menu'
 import { Collapse } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'

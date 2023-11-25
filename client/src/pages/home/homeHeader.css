@@ -1,10 +1,14 @@
 .Homeheader {
-    width: 100%;
-
     background-image: url(../../assets/homeBG.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .Homeheader .contnet {
@@ -13,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .Homeheader .contnet .left {
@@ -60,6 +65,7 @@
     }
 }
 
+
 @media (max-width: 800px) {
     .Homeheader .contnet .left h1 {
         font-size: 3rem;
@@ -70,6 +76,6 @@
     }
 
     .Homeheader .contnet .right img {
-      width: 330px;
+        width: 330px;
     }
 }
