@@ -49,15 +49,15 @@ export function AbooutSection() {
       <div className='part2'>
         <div className="part">
           <h1>Our Fans</h1>
-          <p className='p'>more than <span>+<Countup   end={1000} duration={3} enableScrollSpy /></span></p>
+          <p className='p'>more than <span>+<Countup start={500} end={1000} duration={1.5}  enableScrollSpy /></span></p>
         </div>
         <div className="part">
           <h1>Our Patients</h1>
-          <p className='p'>more than <span>+<Countup  end={294} duration={3} enableScrollSpy /></span></p>
+          <p className='p'>more than <span>+<Countup end={294} duration={1.5}  enableScrollSpy /></span></p>
         </div>
         <div className="part">
           <h1>Our Doctors</h1>
-          <p className='p'>more than <span>+<Countup  end={76} duration={3} enableScrollSpy /></span></p>
+          <p className='p'>more than <span>+<Countup end={76} duration={1.5}  enableScrollSpy /></span></p>
         </div>
       </div>
       <div className='part3'>

@@ -6,7 +6,7 @@ import { Dangerous } from '@mui/icons-material'
 function Error() {
     return (
         <>
-            <Header title={'Error Us'} subtitle={'khalfi aymen'}></Header>
+            <Header title={'Error'} subtitle={'khalfi aymen'}></Header>
             <ErrorSection/>
             <Footer></Footer>
         </>

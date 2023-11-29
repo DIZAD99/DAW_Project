@@ -22,7 +22,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: var(--mainfont);
-    transition: all 250ms ease-in;
+    transition: all 100ms ease-in;
 }
 
 body::-webkit-scrollbar {
@@ -76,10 +76,14 @@ a {
     align-items: center !important;
     font-family: var(--mainfont) !important;
     font-weight: 500 !important;
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     outline: none !important;
-    transition: all 200ms ease-in !important;
+    transition: all 100ms ease-in !important;
     color: var(--white) !important;
+}
+
+.Btn:active {
+    transform: scale(0.95);
 }
 
 .Btn {
