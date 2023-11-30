@@ -8,7 +8,7 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
     const email = req.body.email
-    const mot_de_Passe = req.body.mot_de_Passe
+    const password = req.body.password
 
     try {
         const utilisateur = await Utilisateur.findOne({ email })
@@ -17,9 +17,9 @@ router.post('/', async (req, res) => {
             return res.status(404).json({ message: 'User Not Found or incorrect email' })
         }
 
-        const passwordMatch = bcrypt.compare(mot_de_Passe, utilisateur.mot_de_Passe);
+        // const passwordMatch = bcrypt.compare(password, utilisateur.mot_de_Passe);
 
-        if (!passwordMatch) {
+        if (!(password === utilisateur.mot_de_Passe)) {
             return res.status(401).json({ message: 'incorrect password' })
         }
 

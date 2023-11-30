@@ -6,41 +6,49 @@ const Utilisateur = collectionsModule.Utilisateur
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
-    const nom = req.body.nom
-    const prenom = req.body.prenom
-    const genre = req.body.genre
-    const date_de_Naissance = req.body.date_de_Naissance
-    const email = req.body.email
-    const mot_de_Passe = req.body.mot_de_Passe
-    const role = req.body.role
+router.post('/', (req, res) => {
+    let nom = req.body.nom
+    let prenom = req.body.prenom
+    let genre = req.body.genre
+    let date_de_Naissance = req.body.date_de_Naissance
+    let email = req.body.email
+    let mot_de_Passe = req.body.mot_de_Passe
+    let role = req.body.role
 
-    try {
-        const existingUser = await Utilisateur.findOne({ email })
+    Utilisateur.create({
+        nom: nom,
+        prenom: prenom,
+        genre: genre,
+        date_de_Naissance: date_de_Naissance,
+        email: email,
+        mot_de_Passe: mot_de_Passe,
+        role: role
+    })
+        .then((result) => {
+            switch (result.role) {
+                case 'medecin':
+                    Medecin.insertMany({
+                        ID_Utilisateur: result._id,
+                    }).then(() => console.log('Medecin Added!'))
+                        .catch(err => console.log('Error in utilisateur-route.js: ' + err))
+                    break;
+                case 'admin':
+                    Admin.insertMany({
+                        ID_Utilisateur: result._id,
+                    }).then(() => console.log('admin Added!'))
+                        .catch(err => console.log('Error in utilisateur-route.js: ' + err))
+                    break;
+                case 'patient':
+                    Patient.insertMany({
+                        ID_Utilisateur: result._id,
+                    }).then(() => console.log('Patient Added!'))
+                        .catch(err => console.log('Error in utilisateur-route.js: ' + err))
+                    break;
+            }
 
-        if (existingUser) {
-            return res.status(400).json({ message: 'This email is already in use' })
-        }
-
-        const hashedPassword = await bcrypt.hash(mot_de_Passe, 10)
-
-        const newUser = new Utilisateur({
-            nom,
-            prenom,
-            genre,
-            date_de_Naissance,
-            email,
-            mot_de_Passe: hashedPassword,
-            role,
+            res.status(200).json('Utilisateur Added!')
         })
-
-        await newUser.save()
-
-        res.status(201).json({ message: 'successful registration' })
-    } catch (error) {
-        console.error(error)
-        res.status(500).json({ message: 'Server Error' })
-    }
+        .catch(err => res.status(400).json('Error in utilisateur-route.js: ' + err))
 })
 
 

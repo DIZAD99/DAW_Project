@@ -82,7 +82,7 @@ function Navbar() {
                                 </li>
                                 <li> <Link to='/Contact' >Contact Us</Link> </li>
                                 <li> <Link to='/LogIn' className="Btn" >LogIn</Link> </li>
-                                <li> <Link to='/SignUp' className="Btn" >SignUp</Link> </li>
+
                             </ul>
                         </div>
                     </Collapse>
@@ -136,7 +136,6 @@ function Navbar() {
                             </li>
                             <li> <Link to='/Contact' >Contact Us</Link> </li>
                             <li> <Link to='/LogIn' className="Btn" >LogIn</Link> </li>
-                            <li> <Link to='/SignUp' className="Btn" >SignUp</Link> </li>
                         </ul>
                     </div>
                 </div>
