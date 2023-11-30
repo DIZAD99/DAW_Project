@@ -8,15 +8,15 @@ let LoginRouter = require('./routes/login-route')
 let SignupRouter = require('./routes/signup-route')
 
 dotenv.config()
-
+ 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000 
+ 
+app.use(cors()) 
+app.use(express.json()) 
 
-app.use(cors())
-app.use(express.json())
-
-const URL_DB = process.env.ATLAS_URL
-mongoose.connect(URL_DB)
+const URL_DB = process.env.ATLAS_URL 
+mongoose.connect(URL_DB) 
 const connection = mongoose.connection
 
 connection.once('open', () => {

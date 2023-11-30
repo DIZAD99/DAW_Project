@@ -18,6 +18,15 @@ router.get('/', (req, res) => {
 })
 
 
+router.post('/who', (req, res) => {
+    const email = req.body.email;
+
+    Utilisateur.find({ email: email.email })
+        .then(user => res.json(user))
+        .catch(err => res.status(400).json(`Error in utilisateur-route.js : ${err}`))
+})
+
+
 
 router.post('/add', (req, res) => {
     let nom = req.body.nom
@@ -226,7 +235,7 @@ router.delete('/delete', async (req, res) => {
 
 router.put('/update', (req, res) => {
     const Fnom = req.body.nom
-    const Fprenom = req.body.prenom 
+    const Fprenom = req.body.prenom
     const Fgenre = req.body.genre
     const Fdate_de_Naissance = req.body.date_de_Naissance
     const Femail = req.body.email
