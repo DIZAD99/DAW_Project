@@ -250,7 +250,6 @@ const LoginSection = () => {
 
             navigate('/login/auth', { state: { email: emailVal } })
 
-            // Handle successful login, e.g., navigate to another page
         } catch (err) {
             if (err.response) {
                 if (err.response.status === 404) {

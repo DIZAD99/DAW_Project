@@ -1,43 +1,54 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import CircularProgress from '@mui/material/CircularProgress'
-import './Auth.css'
+import React, { useState, useEffect } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import './Auth.css';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Auth = () => {
-    const location = useLocation()
-    const [email, setemail] = useState(null)
+  const location = useLocation();
+  const navigate = useNavigate();  // useNavigate replaces useHistory in React Router v6
+  const [role, setRole] = useState(null);
 
-    const emailVal = {
-        email: location.state || {}
-    }
-    axios.post('http://localhost:5000/utilisateur/who', emailVal)
-        .then(res => {
-            console.log(res.data[0].role)
-            setemail(res.data[0].role)
-        })
-        .catch(error => console.log('Error:', error))
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const emailVal = {
+          email: location.state || {},
+        };
 
+        const response = await axios.post('http://localhost:5000/utilisateur/who', emailVal);
+        console.log(response.data[0]._id);
+        setRole(response.data[0].role);
 
-    switch (email) {
-        case 'Patinet':
-            window.location = '/contact'
+        switch (response.data[0].role) {
+          case 'Patient':
+            navigate(`/patient/${response.data[0]._id}`);
             break;
-        case 'medecin':
-            window.location = '/about'
+          case 'medecin':
+            navigate(`/medecin/${response.data[0]._id}`);
             break;
-        default:
-            console.log('nothing')
+          case 'admin':
+            navigate('/admin');
             break;
-    }
+          default:
+            // Handle other roles or scenarios
+            break;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
 
-    return (
-        <>
-            <div className="CircularProgress">
-                <CircularProgress />
-            </div>
-        </>
-    )
-}
+    fetchData();
+  }, [location.state, navigate]);
+
+  return (
+    <>
+      <div className="CircularProgress">
+        <CircularProgress />
+      </div>
+    </>
+  );
+};
 
 export default Auth;
