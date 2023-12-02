@@ -10,8 +10,6 @@ import Testimonial from './pages/testimonial/Testimonial'
 import Login from './pages/login/Login'
 import Auth from './pages/auth/Auth'
 import Profile from './pages/patient/Profile'
-import Doctor from './pages/doctor/Doctor'
-import Admin from './pages/admin/admin'
 
 
 
@@ -28,11 +26,9 @@ function MyRoutes() {
           <Route path='/service' Component={Service} />
           <Route path='/team' Component={Team} />
           <Route path='/login' Component={Login} />
-          <Route path='/testimonial' Component={Testimonial} />
           <Route path='/login/auth' Component={Auth} />
-          <Route path="/patient/:id" component={Profile} />
-          <Route path="/medecin/:id" component={Doctor} />
-          <Route path="/admin" component={Admin} />
+          <Route path='/testimonial' Component={Testimonial} />
+          <Route path='/patient' Component={Profile} />
 
         </Routes>
       </Routing>
