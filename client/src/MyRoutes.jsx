@@ -9,6 +9,7 @@ import About from './pages/about/About'
 import Testimonial from './pages/testimonial/Testimonial'
 import Login from './pages/login/Login'
 import Auth from './pages/auth/Auth'
+import Profile from './pages/patient/Profile'
 
 
 
@@ -27,6 +28,7 @@ function MyRoutes() {
           <Route path='/login' Component={Login} />
           <Route path='/login/auth' Component={Auth} />
           <Route path='/testimonial' Component={Testimonial} />
+          <Route path='/patient' Component={Profile} />
 
         </Routes>
       </Routing>
